@@ -8,7 +8,8 @@
     <allow-intent href="market:*" />
     <name>SecuredPwdManager</name>
     <description>
-		A sample Apache Cordova application that responds to the deviceready
+		A sample Apache Cordova application that responds to the
+		deviceready
 		event.
 	</description>
     <author email="nileshjinde@gmail.com" href="http://cordova.io">
@@ -16,6 +17,10 @@
 	</author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
