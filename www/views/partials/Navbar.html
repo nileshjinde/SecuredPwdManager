@@ -3,17 +3,21 @@
 	role="navigation">
 
 	<ul class="nav custom-navbar-right">
-		<li class="pull-left"><a ng-hide="currentPath == '/accountList'" href="#/" class="dropdown-toggle"
-			data-toggle="dropdown" id="backBtn"> <img src="img/icon-back.png"
-				class="custom-nav-item-icon" alt="" />
+		<li class="pull-left"><a ng-hide="currentPath == '/accountList'"
+			href="" class="dropdown-toggle" data-toggle="dropdown" id="backBtn" ng-click='back()'>
+				<i class="glyphicon glyphicon-chevron-left"></i>
 		</a></li>
 		<li class="pull-left"><a id="navTitle" href=""
-			class="dropdown-toggle" style="padding-top: 17px !important;"
-			data-toggle="dropdown">Navbar Title </a></li>
+			class="dropdown-toggle" data-toggle="dropdown">{{navTitle}}</a></li>
+
+		<li class="dropdown pull-right"><a ng-hide="currentPath !== '/accountList'" href="#/addAccount"
+			class="dropdown-toggle" data-toggle="dropdown"> <i
+				class="glyphicon glyphicon-plus"></i>
+		</a></li>
 
 		<li class="dropdown pull-right"><a href="#"
-			class="dropdown-toggle" data-toggle="dropdown"> <img
-				src="img/icon-pluse-blue.png" class="custom-nav-item-icon" alt="" />
+			class="dropdown-toggle" data-toggle="dropdown"> <i
+				class="glyphicon glyphicon-edit" style="display:none;"></i>
 		</a></li>
 	</ul>
 </nav>
