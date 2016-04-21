@@ -1,0 +1,35 @@
+.custom-nav-item-icon {
+	display: block;
+	margin: 0 auto;
+	height: 26px;
+	font-size: 32px;
+}
+
+.custom-navbar .nav>li>a {
+	position: relative;
+	display: block;
+	/* padding: 15px 34px; */
+	font-size: 16px;
+	color: #fff;
+}
+
+.custom-navbar .nav>li>a:hover, .custom-navbar .nav>li>a:focus {
+	text-decoration: none;
+	background-color: transparent;
+}
+
+.custom-navbar>.nav .open>a, .custom-navbar .nav .open>a:hover,
+	.custom-navbar .nav .open>a:focus {
+	background-color: transparent;
+	border-color: none;
+}
+
+.custom-top-navbar .nav>li>a:hover, .custom-top-navbar .nav>li>a:focus {
+	background-color: transparent;
+	color: white;
+}
+
+.list-arrow-right { 
+    background: url('../img/icon-close.png') no-repeat center right;
+    background-size: 26px;
+	}
