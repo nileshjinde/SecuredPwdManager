@@ -25,7 +25,6 @@ mainApp.run(function ($rootScope, $location) {
 
 });
 
-
 mainApp.config(function($routeProvider){
 	$routeProvider
 	.when('/',{
