@@ -2,7 +2,9 @@ var mainApp = angular.module('SecuredPwdManager',['ngRoute']);
 
 // These are constants
 mainApp.constant('config', {
-    appSecurePIN: '0007'
+    appSecurePIN: '0007',
+    accountDataKey: "ACCOUNT_DATA",
+    encKey: "MY_ENC_KEY_TO_HELL"
 });
 
 // These are values , can be changed runtime

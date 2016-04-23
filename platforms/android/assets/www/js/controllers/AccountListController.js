@@ -3,6 +3,8 @@ mainApp.controller('AccountListController',function($scope,$location){
 
 	//alert($location);
 	$scope.currentPath = $location.path();
+	
+	$scope.navTitle = "Account List";
 
 	$scope.accountList = {
 			"accountData":[
