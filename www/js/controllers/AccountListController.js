@@ -1,12 +1,20 @@
-mainApp.controller('AccountListController',function($scope,$location){
+mainApp.controller('AccountListController',function($scope,$location,config){
 	//alert("AccountListController");
 
 	//alert($location);
 	$scope.currentPath = $location.path();
 	
 	$scope.navTitle = "Account List";
-
-	$scope.accountList = {
+	
+	var accountData = JSON.parse(localStorage.getItem(config.accountDataKey));
+	
+	// No data exists, first account adding
+	if(accountData == undefined || accountData== null){
+		accountData = [];
+	}
+	$scope.accountList= accountData;
+	
+	/*$scope.accountList = {
 			"accountData":[
 			               {"accountName": "Facebook",
 			            	   "userId": "fb@fg.com",
@@ -29,7 +37,7 @@ mainApp.controller('AccountListController',function($scope,$location){
 			            	   "pwd": "bfhffh"
 			               }
 			               ]
-	};
+	};*/
 
 
 });
