@@ -9,7 +9,7 @@ mainApp.constant('config', {
 
 // These are values , can be changed runtime
 mainApp.value('userData', {
-    firstName: ""
+	
 });
 
 mainApp.run(function ($rootScope, $location) {
@@ -42,6 +42,11 @@ mainApp.config(function($routeProvider){
 	.when('/addAccount',{
 	   templateUrl : 'views/AddAccount.html',
         controller: 'AddAccountController'	   
+	})
+	
+	.when('/accountDetail',{
+	   templateUrl : 'views/AccountDetail.html',
+        controller: 'AccountDetailController'	   
 	})
 });
 

@@ -14,6 +14,14 @@ mainApp.controller('AccountListController',function($scope,$location,config){
 	}
 	$scope.accountList= accountData;
 	
+	$scope.onAcountClick = function(index){
+		if(accountData.length>0 && index < accountData.length){
+			localStorage.setItem("SELECTED_ACCOUNT",JSON.stringify(accountData[index]));
+			//alert("onAcountClick "+index);
+			$location.path('/accountDetail');
+		}
+	};
+	
 	/*$scope.accountList = {
 			"accountData":[
 			               {"accountName": "Facebook",

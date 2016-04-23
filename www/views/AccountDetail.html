@@ -1,0 +1,25 @@
+<div ng-include src="'views/partials/Navbar.html'"
+	ng-controller="AccountDetailController"></div>
+
+<form role="form" name="AddAccountForm"
+	style="margin: 0 auto; width: 80%; margin-top: 70px;"
+	ng-controller="AccountDetailController" novalidate>
+
+	<div class="form-group">
+		<label for="accountName">Account Name</label> <input type="text"
+			name="accountName" class="form-control"  ng-value="account.accountName" readonly> 
+	</div>
+
+	<div class="form-group">
+		<label for="userId">User ID</label> <input type="text" name="userId"
+			class="form-control" ng-value="account.userId"  readonly> 
+	</div>
+
+	<div class="form-group">
+		<label for="pwd">Password</label> <input type="password" name="pwd" id="pwd" style="width: 80%; display: inline;" class="form-control"
+			ng-value="{{getDecryptedPwd(account.pwd)}}" readonly> 
+			
+			<input type="checkbox" ng-model="showpassword" ng-checked="false" ng-change="showPwd()" readonly>Show</input>
+	</div>
+
+</form>
