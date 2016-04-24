@@ -3,8 +3,8 @@
 
 <div id="acountList" style="margin-top: 51px;">
 	<ul class="list-group">
-		<li class="list-group-item"	ng-repeat="account in accountList.accountData">{{account.accountName}} 
-			 <span class="glyphicon glyphicon-trash icon-angle-right pull-right"></span>
+		<li class="list-group-item"	ng-repeat="account in accountList" ng-click="onAcountClick($index)">{{account.accountName}} 
+			 <span class="glyphicon glyphicon-trash icon-angle-right pull-right" ng-click="deleteAccount($index)"></span>
 		</li>
 	</ul>
 </div>

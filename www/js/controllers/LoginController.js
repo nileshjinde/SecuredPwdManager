@@ -6,7 +6,8 @@ mainApp.controller('LoginController',function($scope,$location,config){
 		if(config.appSecurePIN !== userSecurePin){
 			alert("PIN not matched!");
 		}else{
-			 $location.path( path );	
+			 //$location.path( path );
+			$location.path(path).replace();
 		}
 	}
 });

@@ -1,4 +1,4 @@
-mainApp.controller('AddAccountController',function($scope,$rootScope,$location){
+mainApp.controller('AddAccountController',function($scope,$rootScope,$location,config){
 	//alert("AddAccountController");
 
 	//alert($location);
@@ -9,7 +9,21 @@ mainApp.controller('AddAccountController',function($scope,$rootScope,$location){
 	$scope.OnSubmitAddAccountForm = function(){
 		//alert("On Add Account btn Clicked-- "+ $scope.account);
 		
-		var accountName = accountName;
+		var account = $scope.account;
+		var password = CryptoJS.AES.encrypt(account.pwd, config.encKey).toString();
+		account.pwd = password;
+		
+		/*var encrypted = CryptoJS.AES.encrypt("Message", "Secret Passphrase").toString();
+		var decrypted = CryptoJS.AES.decrypt(encrypted, "Secret Passphrase").toString(CryptoJS.enc.Utf8);*/
+		
+		var accountData = JSON.parse(localStorage.getItem(config.accountDataKey));
+		
+		// No data exists, first account adding
+		if(accountData == undefined || accountData== null){
+			accountData = [];
+		}
+		accountData.push(account);
+		localStorage.setItem(config.accountDataKey,JSON.stringify(accountData));
 		
 		$rootScope.back();
 	}
