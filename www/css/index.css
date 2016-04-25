@@ -1,3 +1,18 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	color: #333;
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 14px;
+	background: url('../img/background-img.jpg') no-repeat 0px 0px;
+	background-size: 100% auto;
+	background-attachment: fixed;
+}
+
 .custom-nav-item-icon {
 	display: block;
 	margin: 0 auto;
@@ -29,7 +44,16 @@
 	color: white;
 }
 
-.list-arrow-right { 
-    background: url('../img/icon-close.png') no-repeat center right;
-    background-size: 26px;
-	}
+.list-arrow-right {
+	background: url('../img/icon-close.png') no-repeat center right;
+	background-size: 26px;
+}
+
+.list-group-item {
+	background: transparent;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: white;
+    opacity: 1;
+}
