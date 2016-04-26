@@ -6,6 +6,10 @@
         <param name="onload" value="true" />
     </feature>
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="www/img/logo.png" />
+    <icon density="mdpi" src="www/img/logo.png" />
+    <icon density="hdpi" src="www/img/logo.png" />
+    <icon density="xhdpi" src="www/img/logo.png" />
     <name>SecuredPwdManager</name>
     <description>
 		A sample Apache Cordova application that responds to the

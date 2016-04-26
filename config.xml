@@ -30,6 +30,28 @@
 	<platform name="android">
 		<allow-intent href="market:*" />
 	</platform>
+	
+	  <platform name="android" >
+
+        <icon
+            density="ldpi"
+            src="www/img/logo.png" />
+
+        <icon
+            density="mdpi"
+            src="www/img/logo.png" />
+
+        <icon
+            density="hdpi"
+            src="www/img/logo.png" />
+
+        <icon
+            density="xhdpi"
+            src="www/img/logo.png" />
+    </platform>
+	
+	
+	
 	<platform name="ios">
 		<allow-intent href="itms:*" />
 		<allow-intent href="itms-apps:*" />
