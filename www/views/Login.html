@@ -1,18 +1,32 @@
 <form role="form" name="loginForm"
-	style="margin: 0 auto; width: 80%; margin-top: 80%;"
-	ng-controller="LoginController" novalidate ng-submit="OnSubmitLoginForm('/accountList')">
-	
-	<div class="form-group">
-		<label for="securityCode">Enter Security Code:</label> 
-		<input type="password" name="securePin" class="form-control" 
-		ng-minlength="4" ng-maxlength="4" ng-model="securePin" 
-		pattern="^[0-9]+$" required >
+	style="margin: 0 auto; width: 80%; margin-top: 60%;"
+	ng-controller="LoginController" novalidate
+	ng-submit="OnSubmitLoginForm('/accountList')">
 
-	<span ng-show="loginForm.securePin.$error.required && loginForm.securePin.$dirty">PIN required</span>
-   <span ng-show="!loginForm.securePin.$error.required && (loginForm.securePin.$error.minlength || loginForm.securePin.$error.maxlength) && loginForm.securePin.$dirty">PIN must be 4 digits.</span>
-   <span ng-show="!loginForm.securePin.$error.required && !loginForm.securePin.$error.minlength && !loginForm.securePin.$error.maxlength && loginForm.securePin.$error.pattern && loginForm.securePin.$dirty"
-   >Enter digits only(number)</span>
+	<div class="form-group">
+		<label for="securityCode">Enter Security Code:</label> <input
+			type="password" name="securePin" class="form-control"
+			ng-minlength="4" ng-maxlength="4" ng-model="securePin"
+			pattern="^[0-9]+$" required> <span
+			ng-show="loginForm.securePin.$error.required && loginForm.securePin.$dirty">PIN
+			required</span> <span
+			ng-show="!loginForm.securePin.$error.required && (loginForm.securePin.$error.minlength || loginForm.securePin.$error.maxlength) && loginForm.securePin.$dirty">PIN
+			must be 4 digits.</span> <span
+			ng-show="!loginForm.securePin.$error.required && !loginForm.securePin.$error.minlength && !loginForm.securePin.$error.maxlength && loginForm.securePin.$error.pattern && loginForm.securePin.$dirty">Enter
+			digits only(number)</span>
 
 	</div>
-	<button type="submit" class="btn btn-primary" style="width: 100%;" ng-disabled="!loginForm.$valid">Login</button>
+	<button type="submit" class="btn btn-primary" style="width: 100%;"
+		ng-disabled="!loginForm.$valid">Login</button>
+
+<div class="form-group" style="margin-top: 20px;">
+	<p class="text-center">
+		If you don't have security code!</br>
+		register it free now
+	</p>
+	</div>
+	
+	<button type="submit" class="btn btn-warning" style="width: 100%;" 
+	ng-click="OnRegisterBtnClicked($event,'/register')">Register</button>
+	
 </form>

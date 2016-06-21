@@ -1,0 +1,38 @@
+<form role="form" name="resgisterForm"
+	style="margin: 0 auto; width: 80%; margin-top: 60%;"
+	ng-controller="RegisterController" novalidate
+	ng-submit="OnSubmitRegisterForm('/accountList')">
+
+	<div class="form-group">
+		<label for="securityCode">Enter Security Code:</label> <input
+			type="password" name="securePin" class="form-control"
+			ng-minlength="4" ng-maxlength="4" ng-model="securePin"
+			pattern="^[0-9]+$" required> <span
+			ng-show="resgisterForm.securePin.$error.required && resgisterForm.securePin.$dirty">PIN
+			required</span> <span
+			ng-show="!resgisterForm.securePin.$error.required && (resgisterForm.securePin.$error.minlength || resgisterForm.securePin.$error.maxlength) && resgisterForm.securePin.$dirty">PIN
+			must be 4 digits.</span> <span
+			ng-show="!resgisterForm.securePin.$error.required && !resgisterForm.securePin.$error.minlength && !resgisterForm.securePin.$error.maxlength && resgisterForm.securePin.$error.pattern && resgisterForm.securePin.$dirty">Enter
+			digits only(number)</span>
+	</div>
+	
+	<div class="form-group">
+		<label for="securityCode">Re-Enter Security Code:</label> <input
+			type="password" name="reSecurePin" class="form-control"
+			ng-minlength="4" ng-maxlength="4" ng-model="reSecurePin"
+			pattern="^[0-9]+$" nx-equal="securePin" required> <span
+			ng-show="resgisterForm.reSecurePin.$error.required && resgisterForm.reSecurePin.$dirty">Re-Enter PIN
+			required</span> <span
+			ng-show="!resgisterForm.reSecurePin.$error.required && (resgisterForm.reSecurePin.$error.minlength || resgisterForm.reSecurePin.$error.maxlength) && resgisterForm.reSecurePin.$dirty">PIN
+			must be 4 digits.</span> <span
+			ng-show="!resgisterForm.reSecurePin.$error.required && !resgisterForm.reSecurePin.$error.minlength && !resgisterForm.reSecurePin.$error.maxlength && resgisterForm.reSecurePin.$error.pattern && resgisterForm.reSecurePin.$dirty">Enter
+			digits only(number)</span>
+			<span class="error-red"
+				ng-show="!resgisterForm.reSecurePin.$error.required  && resgisterForm.reSecurePin.$error.nxEqual">Re-Enter
+				PIN must be equal to PIN</span> 
+	</div>
+	
+	<button type="submit" class="btn btn-primary" style="width: 100%;"
+		ng-disabled="!resgisterForm.$valid">Register</button>
+	
+</form>

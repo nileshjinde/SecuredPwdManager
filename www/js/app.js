@@ -2,7 +2,7 @@ var mainApp = angular.module('SecuredPwdManager',['ngRoute']);
 
 // These are constants
 mainApp.constant('config', {
-    appSecurePIN: '0007',
+   /* appSecurePIN: '0007',*/
     accountDataKey: "ACCOUNT_DATA",
     encKey: "MY_ENC_KEY_TO_HELL"
 });
@@ -33,6 +33,11 @@ mainApp.config(function($routeProvider){
 	.when('/',{
 	   templateUrl : 'views/Login.html',
         controller: 'LoginController'	   
+	})
+	
+	.when('/register',{
+	   templateUrl : 'views/Register.html',
+        controller: 'RegisterController'	   
 	})
 	
 	.when('/accountList',{
